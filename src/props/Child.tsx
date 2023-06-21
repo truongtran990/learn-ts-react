@@ -1,6 +1,17 @@
 interface ChildProps {
   color: string;
+  onClick: () => void;
+  children: React.ReactNode;
 }
+
+export const Child = ({ color, onClick }: ChildProps) => {
+  return (
+    <>
+      <h1>{color}</h1>
+      <button onClick={onClick}>Click me</button>
+    </>
+  );
+};
 
 /**
  * Child will be a React function component
@@ -9,6 +20,17 @@ interface ChildProps {
  * @param param0 color props is passing from parent component
  * @returns React Functional Component
  */
-export const Child: React.FC<ChildProps> = ({ color }) => {
-  return <h1>{color}</h1>;
+export const ChildAsFC: React.FC<ChildProps> = ({
+  color,
+  onClick,
+  children,
+}) => {
+  return (
+    <>
+      <h1>{color}</h1>
+      {children}
+      <br />
+      <button onClick={onClick}>Click me</button>
+    </>
+  );
 };
