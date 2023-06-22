@@ -1,10 +1,12 @@
 import Parent from "./props/Parent";
+import GuestList from "./state/GuestList";
 
 function App() {
   return (
     <div className="App">
       <h1>React 18 Alpha Demo</h1>
-      <Parent />
+      <GuestList />
+      {/* <Parent /> */}
     </div>
   );
 }
